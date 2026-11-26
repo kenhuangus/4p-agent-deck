@@ -158,6 +158,7 @@ a { color: inherit; text-decoration: none; }
 .mx td { padding: 0.8vh 0.6rem; border-bottom: 1px solid var(--line); vertical-align: middle; color: #2b303a; }
 .mx td.ag b { display: block; color: var(--navy); }
 .mx td.ag small { color: var(--muted); font-size: 0.82em; }
+.mx .cl { display: none; }
 .mx td.dt { color: var(--muted); font-size: 0.9em; white-space: nowrap; }
 .lv { display: inline-block; border-radius: 6px; padding: 0.15rem 0.55rem; font-weight: 700; font-size: 0.92em; }
 .lv--full { background: var(--green-soft); color: #1d6b31; }
@@ -282,6 +283,8 @@ body.is-zh .kicker, body.is-zh .eyebrow, body.is-zh .hero__script, body.is-zh .b
   .lane, .crow { grid-template-columns: 1fr; gap: 4px; }
   .draw-wrap .fig-table { overflow-x: auto; }
   .author-books-header { white-space: normal; flex-wrap: wrap; }
+  .two-col { grid-template-columns: minmax(0, 1fr); flex: none; min-height: auto; }
+  .card, .draw-wrap { min-height: auto; min-width: 0; }
 }
 @media (max-width: 640px) {
   .bar { gap: 0.5rem; padding: 0 8px; }
@@ -293,6 +296,15 @@ body.is-zh .kicker, body.is-zh .eyebrow, body.is-zh .hero__script, body.is-zh .b
   .books-gallery-grid { grid-template-columns: repeat(3, 1fr); }
   .contrast-head, .contrast-row { grid-template-columns: 1fr 1.4rem 1fr; gap: 0.3rem; }
   .cbox { padding: 8px; font-size: 0.92rem; }
+  /* tables become one card per row */
+  .mx, .mx tbody, .mx tr, .mx td { display: block; width: 100%; }
+  .mx thead { display: none; }
+  .mx tr { border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; margin-bottom: 10px; background: #fff; }
+  .mx td { border: none; padding: 4px 0; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; text-align: right; }
+  .mx td.ag, .mx--risk td.rk { display: block; text-align: left; white-space: normal; border-bottom: 1px solid var(--line); padding-bottom: 6px; margin-bottom: 2px; font-size: 1.05rem; }
+  .mx td.ag small { display: block; }
+  .mx .cl { display: inline; flex: none; text-align: left; font-family: 'Space Grotesk', sans-serif; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+  .mx td.dt { white-space: normal; }
 }
 
 </style>
@@ -306,9 +318,9 @@ body.is-zh .kicker, body.is-zh .eyebrow, body.is-zh .hero__script, body.is-zh .b
       <button type="button" class="lang__btn is-on" data-lang="en">EN</button>
       <button type="button" class="lang__btn" data-lang="zh">中文</button>
     </div>
-    <button type="button" class="bar__btn" id="fsBtn" title="Full Screen (F)"><span class="fs-label" data-k="k279">Full Screen</span></button>
-    <a href="https://github.com/kenhuangus/4p-agent-deck" target="_blank" rel="noopener" class="bar__cta bar__cta--alt"><span data-k="k280">GitHub Repo ↗</span></a>
-    <a href="https://distributedapps.ai/" target="_blank" rel="noopener" class="bar__cta"><span data-k="k281">DistributedApps ↗</span></a>
+    <button type="button" class="bar__btn" id="fsBtn" title="Full Screen (F)"><span class="fs-label" data-k="k318">Full Screen</span></button>
+    <a href="https://github.com/kenhuangus/4p-agent-deck" target="_blank" rel="noopener" class="bar__cta bar__cta--alt"><span data-k="k319">GitHub Repo ↗</span></a>
+    <a href="https://distributedapps.ai/" target="_blank" rel="noopener" class="bar__cta"><span data-k="k320">DistributedApps ↗</span></a>
   </div>
 </header>
 <main class="deck" id="deck">
@@ -618,48 +630,48 @@ body.is-zh .kicker, body.is-zh .eyebrow, body.is-zh .hero__script, body.is-zh .b
 </section>
 <section class="slide slide--alt" id="s7" data-title-en="Seven 4P Agents Compared" data-title-zh="七款 4P 智能体对比">
   <div class="slide__in">
-    <span class="kicker" data-k="k156">Comparison</span>
-    <h2 class="h2" data-k="k157">Seven 4P Agents Compared</h2>
-    <p class="lead" data-k="k158">Google, Microsoft, Meta, OpenAI and Anthropic, plus the startups behind Instinct and Poke.</p>
+    <span class="kicker" data-k="k191">Comparison</span>
+    <h2 class="h2" data-k="k192">Seven 4P Agents Compared</h2>
+    <p class="lead" data-k="k193">Google, Microsoft, Meta, OpenAI and Anthropic, plus the startups behind Instinct and Poke.</p>
     <div class="two-col">
       <div class="card card--focus">
-        <h3 class="card__title"><span class="tag"><span data-k="k159">Scoring</span></span><span data-k="k160">How to read it</span></h3>
+        <h3 class="card__title"><span class="tag"><span data-k="k194">Scoring</span></span><span data-k="k195">How to read it</span></h3>
         <ul class="clean-list">
-<li><span data-k="k161"><strong>Full</strong> means the source describes the property with no stated limit, <strong>Partial</strong> means a stated limit or narrower scope, and <strong>Limited</strong> means the reviewed material does not describe it.</span></li>
-<li><span data-k="k162">OpenAI Dots is the only agent scored Full on all four properties.</span></li>
-<li><span data-k="k163">All seven score Full on Proactive; the makers differ most in approval design and in whether the agent runs in a consumer account or inside a company tenant.</span></li>
+<li><span data-k="k196"><strong>Full</strong> means the source describes the property with no stated limit, <strong>Partial</strong> means a stated limit or narrower scope, and <strong>Limited</strong> means the reviewed material does not describe it.</span></li>
+<li><span data-k="k197">OpenAI Dots is the only agent scored Full on all four properties.</span></li>
+<li><span data-k="k198">All seven score Full on Proactive; the makers differ most in approval design and in whether the agent runs in a consumer account or inside a company tenant.</span></li>
         </ul>
       </div>
       <div class="draw-wrap">
 <div class="fig fig-table">
   <table class="mx">
-    <thead><tr><th><span data-k="k149">Agent</span></th><th><span data-k="k150">Proactive</span></th><th><span data-k="k151">Persistent</span></th><th><span data-k="k152">Personal</span></th><th><span data-k="k153">Professional</span></th><th><span data-k="k154">Source date</span></th></tr></thead>
-    <tbody><tr><td class="ag"><b>Claude Duet</b><small>Anthropic</small></td><td><span class="lv lv--full" data-k="k114">Full</span></td><td><span class="lv lv--full" data-k="k115">Full</span></td><td><span class="lv lv--partial" data-k="k116">Partial</span></td><td><span class="lv lv--full" data-k="k117">Full</span></td><td class="dt"><span data-k="k118">Oct 21, 2026</span></td></tr><tr><td class="ag"><b>Meta Muse</b><small>Meta</small></td><td><span class="lv lv--full" data-k="k119">Full</span></td><td><span class="lv lv--full" data-k="k120">Full</span></td><td><span class="lv lv--full" data-k="k121">Full</span></td><td><span class="lv lv--partial" data-k="k122">Partial</span></td><td class="dt"><span data-k="k123">Sep 8, 2026</span></td></tr><tr><td class="ag"><b>OpenAI Dots</b><small>OpenAI</small></td><td><span class="lv lv--full" data-k="k124">Full</span></td><td><span class="lv lv--full" data-k="k125">Full</span></td><td><span class="lv lv--full" data-k="k126">Full</span></td><td><span class="lv lv--full" data-k="k127">Full</span></td><td class="dt"><span data-k="k128">Sep 29, 2026</span></td></tr><tr><td class="ag"><b>Instinct</b><small>Spear Street Technology</small></td><td><span class="lv lv--full" data-k="k129">Full</span></td><td><span class="lv lv--full" data-k="k130">Full</span></td><td><span class="lv lv--full" data-k="k131">Full</span></td><td><span class="lv lv--limited" data-k="k132">Limited</span></td><td class="dt"><span data-k="k133">Aug 26, 2026 (Forbes)</span></td></tr><tr><td class="ag"><b>Gemini Spark</b><small>Google</small></td><td><span class="lv lv--full" data-k="k134">Full</span></td><td><span class="lv lv--full" data-k="k135">Full</span></td><td><span class="lv lv--full" data-k="k136">Full</span></td><td><span class="lv lv--partial" data-k="k137">Partial</span></td><td class="dt"><span data-k="k138">May 19, 2026</span></td></tr><tr><td class="ag"><b>Microsoft Autopilot</b><small>Microsoft</small></td><td><span class="lv lv--full" data-k="k139">Full</span></td><td><span class="lv lv--full" data-k="k140">Full</span></td><td><span class="lv lv--limited" data-k="k141">Limited</span></td><td><span class="lv lv--full" data-k="k142">Full</span></td><td class="dt"><span data-k="k143">Jun 2, 2026</span></td></tr><tr><td class="ag"><b>Poke</b><small>The Interaction Company of California</small></td><td><span class="lv lv--full" data-k="k144">Full</span></td><td><span class="lv lv--partial" data-k="k145">Partial</span></td><td><span class="lv lv--full" data-k="k146">Full</span></td><td><span class="lv lv--partial" data-k="k147">Partial</span></td><td class="dt"><span data-k="k148">Jun 4, 2026 (AppleInsider)</span></td></tr></tbody>
+    <thead><tr><th><span data-k="k184">Agent</span></th><th><span data-k="k185">Proactive</span></th><th><span data-k="k186">Persistent</span></th><th><span data-k="k187">Personal</span></th><th><span data-k="k188">Professional</span></th><th><span data-k="k189">Source date</span></th></tr></thead>
+    <tbody><tr><td class="ag"><b>Claude Duet</b><small>Anthropic</small></td><td><span class="cl" data-k="k114">Proactive</span><span class="lv lv--full" data-k="k115">Full</span></td><td><span class="cl" data-k="k116">Persistent</span><span class="lv lv--full" data-k="k117">Full</span></td><td><span class="cl" data-k="k118">Personal</span><span class="lv lv--partial" data-k="k119">Partial</span></td><td><span class="cl" data-k="k120">Professional</span><span class="lv lv--full" data-k="k121">Full</span></td><td class="dt"><span class="cl" data-k="k122">Source date</span><span data-k="k123">Oct 21, 2026</span></td></tr><tr><td class="ag"><b>Meta Muse</b><small>Meta</small></td><td><span class="cl" data-k="k124">Proactive</span><span class="lv lv--full" data-k="k125">Full</span></td><td><span class="cl" data-k="k126">Persistent</span><span class="lv lv--full" data-k="k127">Full</span></td><td><span class="cl" data-k="k128">Personal</span><span class="lv lv--full" data-k="k129">Full</span></td><td><span class="cl" data-k="k130">Professional</span><span class="lv lv--partial" data-k="k131">Partial</span></td><td class="dt"><span class="cl" data-k="k132">Source date</span><span data-k="k133">Sep 8, 2026</span></td></tr><tr><td class="ag"><b>OpenAI Dots</b><small>OpenAI</small></td><td><span class="cl" data-k="k134">Proactive</span><span class="lv lv--full" data-k="k135">Full</span></td><td><span class="cl" data-k="k136">Persistent</span><span class="lv lv--full" data-k="k137">Full</span></td><td><span class="cl" data-k="k138">Personal</span><span class="lv lv--full" data-k="k139">Full</span></td><td><span class="cl" data-k="k140">Professional</span><span class="lv lv--full" data-k="k141">Full</span></td><td class="dt"><span class="cl" data-k="k142">Source date</span><span data-k="k143">Sep 29, 2026</span></td></tr><tr><td class="ag"><b>Instinct</b><small>Spear Street Technology</small></td><td><span class="cl" data-k="k144">Proactive</span><span class="lv lv--full" data-k="k145">Full</span></td><td><span class="cl" data-k="k146">Persistent</span><span class="lv lv--full" data-k="k147">Full</span></td><td><span class="cl" data-k="k148">Personal</span><span class="lv lv--full" data-k="k149">Full</span></td><td><span class="cl" data-k="k150">Professional</span><span class="lv lv--limited" data-k="k151">Limited</span></td><td class="dt"><span class="cl" data-k="k152">Source date</span><span data-k="k153">Aug 26, 2026 (Forbes)</span></td></tr><tr><td class="ag"><b>Gemini Spark</b><small>Google</small></td><td><span class="cl" data-k="k154">Proactive</span><span class="lv lv--full" data-k="k155">Full</span></td><td><span class="cl" data-k="k156">Persistent</span><span class="lv lv--full" data-k="k157">Full</span></td><td><span class="cl" data-k="k158">Personal</span><span class="lv lv--full" data-k="k159">Full</span></td><td><span class="cl" data-k="k160">Professional</span><span class="lv lv--partial" data-k="k161">Partial</span></td><td class="dt"><span class="cl" data-k="k162">Source date</span><span data-k="k163">May 19, 2026</span></td></tr><tr><td class="ag"><b>Microsoft Autopilot</b><small>Microsoft</small></td><td><span class="cl" data-k="k164">Proactive</span><span class="lv lv--full" data-k="k165">Full</span></td><td><span class="cl" data-k="k166">Persistent</span><span class="lv lv--full" data-k="k167">Full</span></td><td><span class="cl" data-k="k168">Personal</span><span class="lv lv--limited" data-k="k169">Limited</span></td><td><span class="cl" data-k="k170">Professional</span><span class="lv lv--full" data-k="k171">Full</span></td><td class="dt"><span class="cl" data-k="k172">Source date</span><span data-k="k173">Jun 2, 2026</span></td></tr><tr><td class="ag"><b>Poke</b><small>The Interaction Company of California</small></td><td><span class="cl" data-k="k174">Proactive</span><span class="lv lv--full" data-k="k175">Full</span></td><td><span class="cl" data-k="k176">Persistent</span><span class="lv lv--partial" data-k="k177">Partial</span></td><td><span class="cl" data-k="k178">Personal</span><span class="lv lv--full" data-k="k179">Full</span></td><td><span class="cl" data-k="k180">Professional</span><span class="lv lv--partial" data-k="k181">Partial</span></td><td class="dt"><span class="cl" data-k="k182">Source date</span><span data-k="k183">Jun 4, 2026 (AppleInsider)</span></td></tr></tbody>
   </table>
-  <div class="fig-caption" data-k="k155">Scored from what each maker or the cited coverage documents, as of November 25, 2026.</div>
+  <div class="fig-caption" data-k="k190">Scored from what each maker or the cited coverage documents, as of November 25, 2026.</div>
 </div></div>
     </div>
   </div>
 </section>
 <section class="slide" id="s8" data-title-en="Four Risks, Three Frameworks" data-title-zh="四类风险，三个框架">
   <div class="slide__in">
-    <span class="kicker" data-k="k178">Risk map</span>
-    <h2 class="h2" data-k="k179">Four Risks, Three Frameworks</h2>
-    <p class="lead" data-k="k180">The 4P design adds four risks that a chat assistant waiting for prompts did not have, and early Instinct users reported incidents matching three of them within weeks of launch.</p>
+    <span class="kicker" data-k="k217">Risk map</span>
+    <h2 class="h2" data-k="k218">Four Risks, Three Frameworks</h2>
+    <p class="lead" data-k="k219">The 4P design adds four risks that a chat assistant waiting for prompts did not have, and early Instinct users reported incidents matching three of them within weeks of launch.</p>
     <div class="two-col">
       <div class="card card--focus">
-        <h3 class="card__title"><span class="tag"><span data-k="k181">Frameworks I work on</span></span><span data-k="k182">How I classify each risk</span></h3>
+        <h3 class="card__title"><span class="tag"><span data-k="k220">Frameworks I work on</span></span><span data-k="k221">How I classify each risk</span></h3>
         <ul class="clean-list">
-<li><span data-k="k183"><strong>OWASP AIVSS</strong>, the project I lead, scores agentic AI vulnerabilities and publishes a web calculator for that scoring.</span></li>
-<li><span data-k="k184"><strong>The OWASP Agentic Skills Top 10 (AST10)</strong> names ten risks in the skills that tell agents how to act.</span></li>
-<li><span data-k="k185"><strong>MAESTRO</strong> is the seven-layer agentic threat model I introduced through the Cloud Security Alliance in February 2025.</span></li>
+<li><span data-k="k222"><strong>OWASP AIVSS</strong>, the project I lead, scores agentic AI vulnerabilities and publishes a web calculator for that scoring.</span></li>
+<li><span data-k="k223"><strong>The OWASP Agentic Skills Top 10 (AST10)</strong> names ten risks in the skills that tell agents how to act.</span></li>
+<li><span data-k="k224"><strong>MAESTRO</strong> is the seven-layer agentic threat model I introduced through the Cloud Security Alliance in February 2025.</span></li>
         </ul>
       </div>
       <div class="draw-wrap">
 <div class="fig fig-table">
   <table class="mx mx--risk">
-    <thead><tr><th><span data-k="k176">Risk</span></th><th>AST10</th><th><span data-k="k177">MAESTRO layer</span></th><th>AIVSS</th></tr></thead>
-    <tbody><tr><td class="rk"><span data-k="k164">Standing access</span></td><td><span data-k="k165">AST03 Over-Privileged Skills, now a permanent condition instead of a per-task one</span></td><td><span data-k="k166">Deployment and Infrastructure</span></td><td>—</td></tr><tr><td class="rk"><span data-k="k167">Memory poisoning</span></td><td><span data-k="k168">AST05 Untrusted External Instructions</span></td><td><span data-k="k169">Data Operations; Agent Frameworks</span></td><td>—</td></tr><tr><td class="rk"><span data-k="k170">Agent-started actions</span></td><td>—</td><td><span data-k="k171">Agent Ecosystem: Agent Tool Misuse, Agent Goal Manipulation</span></td><td><span data-k="k172">Largest agentic amplification of the four</span></td></tr><tr><td class="rk"><span data-k="k173">Delegated authority</span></td><td><span data-k="k174">AST09 No Governance</span></td><td><span data-k="k175">Agent Ecosystem: Repudiation, Agent Impersonation</span></td><td>—</td></tr></tbody>
+    <thead><tr><th><span data-k="k215">Risk</span></th><th>AST10</th><th><span data-k="k216">MAESTRO layer</span></th><th>AIVSS</th></tr></thead>
+    <tbody><tr><td class="rk"><span data-k="k199">Standing access</span></td><td><span class="cl">AST10</span><span data-k="k200">AST03 Over-Privileged Skills, now a permanent condition instead of a per-task one</span></td><td><span class="cl" data-k="k211">MAESTRO layer</span><span data-k="k201">Deployment and Infrastructure</span></td><td><span class="cl">AIVSS</span>—</td></tr><tr><td class="rk"><span data-k="k202">Memory poisoning</span></td><td><span class="cl">AST10</span><span data-k="k203">AST05 Untrusted External Instructions</span></td><td><span class="cl" data-k="k212">MAESTRO layer</span><span data-k="k204">Data Operations; Agent Frameworks</span></td><td><span class="cl">AIVSS</span>—</td></tr><tr><td class="rk"><span data-k="k205">Agent-started actions</span></td><td><span class="cl">AST10</span>—</td><td><span class="cl" data-k="k213">MAESTRO layer</span><span data-k="k206">Agent Ecosystem: Agent Tool Misuse, Agent Goal Manipulation</span></td><td><span class="cl">AIVSS</span><span data-k="k207">Largest agentic amplification of the four</span></td></tr><tr><td class="rk"><span data-k="k208">Delegated authority</span></td><td><span class="cl">AST10</span><span data-k="k209">AST09 No Governance</span></td><td><span class="cl" data-k="k214">MAESTRO layer</span><span data-k="k210">Agent Ecosystem: Repudiation, Agent Impersonation</span></td><td><span class="cl">AIVSS</span>—</td></tr></tbody>
   </table>
 </div></div>
     </div>
@@ -667,57 +679,57 @@ body.is-zh .kicker, body.is-zh .eyebrow, body.is-zh .hero__script, body.is-zh .b
 </section>
 <section class="slide slide--alt" id="s9" data-title-en="Risk 1: Standing Access" data-title-zh="风险一：常驻访问权限">
   <div class="slide__in">
-    <span class="kicker" data-k="k195">Risk 1</span>
-    <h2 class="h2" data-k="k196">Standing Access</h2>
-    <p class="lead" data-k="k197">An agent that checks an inbox on its own schedule cannot wait for the user to sign in.</p>
+    <span class="kicker" data-k="k234">Risk 1</span>
+    <h2 class="h2" data-k="k235">Standing Access</h2>
+    <p class="lead" data-k="k236">An agent that checks an inbox on its own schedule cannot wait for the user to sign in.</p>
     <div class="two-col">
       <div class="card card--focus">
-        <h3 class="card__title"><span class="tag"><span data-k="k198">The risk</span></span><span data-k="k199">Every account, all the time</span></h3>
+        <h3 class="card__title"><span class="tag"><span data-k="k237">The risk</span></span><span data-k="k238">Every account, all the time</span></h3>
         <ul class="clean-list">
-<li><span data-k="k200">Users leave mail, chat, files and often payment methods connected at all times.</span></li>
-<li><span data-k="k201">An attacker who compromises a chat assistant gets one conversation; an attacker who compromises a 4P agent or its machine gets every connected account at once, during hours when nobody watches it.</span></li>
-<li><span data-k="k202">Disconnecting an app stops future reads only: Forbes reports that Instinct kept Claire Vo's emails after she disconnected Gmail, and Vellum reports the team then added a deletion tool.</span></li>
+<li><span data-k="k239">Users leave mail, chat, files and often payment methods connected at all times.</span></li>
+<li><span data-k="k240">An attacker who compromises a chat assistant gets one conversation; an attacker who compromises a 4P agent or its machine gets every connected account at once, during hours when nobody watches it.</span></li>
+<li><span data-k="k241">Disconnecting an app stops future reads only: Forbes reports that Instinct kept Claire Vo's emails after she disconnected Gmail, and Vellum reports the team then added a deletion tool.</span></li>
         </ul>
       </div>
       <div class="draw-wrap">
 <div class="fig fig-creds">
-  <div class="fig-title"><span data-k="k193">Credential separation: the model uses a login it never reads</span></div>
-  <div class="fig-sub" data-k="k194">In my view, this design gives security teams the most protection today. What each maker documents:</div>
-  <div class="crows"><div class="crow crow--good"><b>Claude Duet</b><span data-k="k186">Never sees passwords or sign-in tokens</span></div><div class="crow crow--good"><b>Meta Muse</b><span data-k="k187">Uses stored credentials without seeing them</span></div><div class="crow crow--good"><b>OpenAI Dots</b><span data-k="k188">Uses saved passwords without exposing them to the model</span></div><div class="crow crow--good"><b>Microsoft Autopilot</b><span data-k="k189">Credentials scoped to the task and redacted from logs</span></div><div class="crow crow--bad"><b>Instinct</b><span data-k="k190">Cached credentials on the agent's own machine, per Vellum</span></div><div class="crow crow--none"><b>Gemini Spark</b><span data-k="k191">No controls described beyond the user's choice of connected apps</span></div><div class="crow crow--none"><b>Poke</b><span data-k="k192">Not described in the reviewed material</span></div></div>
+  <div class="fig-title"><span data-k="k232">Credential separation: the model uses a login it never reads</span></div>
+  <div class="fig-sub" data-k="k233">In my view, this design gives security teams the most protection today. What each maker documents:</div>
+  <div class="crows"><div class="crow crow--good"><b>Claude Duet</b><span data-k="k225">Never sees passwords or sign-in tokens</span></div><div class="crow crow--good"><b>Meta Muse</b><span data-k="k226">Uses stored credentials without seeing them</span></div><div class="crow crow--good"><b>OpenAI Dots</b><span data-k="k227">Uses saved passwords without exposing them to the model</span></div><div class="crow crow--good"><b>Microsoft Autopilot</b><span data-k="k228">Credentials scoped to the task and redacted from logs</span></div><div class="crow crow--bad"><b>Instinct</b><span data-k="k229">Cached credentials on the agent's own machine, per Vellum</span></div><div class="crow crow--none"><b>Gemini Spark</b><span data-k="k230">No controls described beyond the user's choice of connected apps</span></div><div class="crow crow--none"><b>Poke</b><span data-k="k231">Not described in the reviewed material</span></div></div>
 </div></div>
     </div>
   </div>
 </section>
 <section class="slide" id="s10" data-title-en="Risk 2: Memory Poisoning" data-title-zh="风险二：记忆投毒">
   <div class="slide__in">
-    <span class="kicker" data-k="k212">Risk 2</span>
-    <h2 class="h2" data-k="k213">Memory Poisoning</h2>
-    <p class="lead" data-k="k214">Persistent memory can make a one-time prompt injection into an instruction the agent keeps following.</p>
+    <span class="kicker" data-k="k251">Risk 2</span>
+    <h2 class="h2" data-k="k252">Memory Poisoning</h2>
+    <p class="lead" data-k="k253">Persistent memory can make a one-time prompt injection into an instruction the agent keeps following.</p>
     <div class="two-col">
       <div class="card card--focus">
-        <h3 class="card__title"><span class="tag"><span data-k="k215">The risk</span></span><span data-k="k216">Text from strangers becomes memory</span></h3>
+        <h3 class="card__title"><span class="tag"><span data-k="k254">The risk</span></span><span data-k="k255">Text from strangers becomes memory</span></h3>
         <ul class="clean-list">
-<li><span data-k="k217">Every day, a 4P agent reads mail and messages from strangers and writes notes from them into long-term memory.</span></li>
-<li><span data-k="k218">Vellum reports that Alex Cohen emailed his own inbox a set of malicious instructions, that Instinct followed them, and that Cohen then deleted his account.</span></li>
-<li><span data-k="k219">Removing poisoned entries is harder than recovering from one injected prompt, because nobody can easily see which remembered fact came from which sender.</span></li>
+<li><span data-k="k256">Every day, a 4P agent reads mail and messages from strangers and writes notes from them into long-term memory.</span></li>
+<li><span data-k="k257">Vellum reports that Alex Cohen emailed his own inbox a set of malicious instructions, that Instinct followed them, and that Cohen then deleted his account.</span></li>
+<li><span data-k="k258">Removing poisoned entries is harder than recovering from one injected prompt, because nobody can easily see which remembered fact came from which sender.</span></li>
         </ul>
       </div>
       <div class="draw-wrap">
 <div class="fig fig-flow">
   <div class="flow">
-    <div class="fstep fstep--bad" data-k="k203">A stranger's email with attacker text</div>
+    <div class="fstep fstep--bad" data-k="k242">A stranger's email with attacker text</div>
     <div class="farrow">→</div>
-    <div class="fstep" data-k="k204">The agent writes a summary, preference or follow-up</div>
+    <div class="fstep" data-k="k243">The agent writes a summary, preference or follow-up</div>
     <div class="farrow">→</div>
-    <div class="fstep fstep--mem" data-k="k205">Long-term memory</div>
+    <div class="fstep fstep--mem" data-k="k244">Long-term memory</div>
     <div class="farrow">→</div>
-    <div class="fstep fstep--bad" data-k="k206">A decision weeks later</div>
+    <div class="fstep fstep--bad" data-k="k245">A decision weeks later</div>
   </div>
   <div class="fix">
-    <div class="fix__title" data-k="k207">My proposed fix: record the source of every stored memory entry</div>
+    <div class="fix__title" data-k="k246">My proposed fix: record the source of every stored memory entry</div>
     <div class="fix__rows">
-      <div class="mrow"><span class="src src--user" data-k="k208">Source: user stated</span><span data-k="k209">Trusted as the user's own preference</span></div>
-      <div class="mrow"><span class="src src--ext" data-k="k210">Source: outside sender</span><span data-k="k211">Kept apart from what the user stated</span></div>
+      <div class="mrow"><span class="src src--user" data-k="k247">Source: user stated</span><span data-k="k248">Trusted as the user's own preference</span></div>
+      <div class="mrow"><span class="src src--ext" data-k="k249">Source: outside sender</span><span data-k="k250">Kept apart from what the user stated</span></div>
     </div>
   </div>
 </div></div>
@@ -726,36 +738,36 @@ body.is-zh .kicker, body.is-zh .eyebrow, body.is-zh .hero__script, body.is-zh .b
 </section>
 <section class="slide slide--alt" id="s11" data-title-en="Risk 3: Agent-Started Actions" data-title-zh="风险三：智能体自发的操作">
   <div class="slide__in">
-    <span class="kicker" data-k="k230">Risk 3</span>
-    <h2 class="h2" data-k="k231">Agent-Started Actions</h2>
-    <p class="lead" data-k="k232">In a chat product, every action starts from a prompt the user typed; with a 4P agent, the user often learns about an action from the agent's own report.</p>
+    <span class="kicker" data-k="k269">Risk 3</span>
+    <h2 class="h2" data-k="k270">Agent-Started Actions</h2>
+    <p class="lead" data-k="k271">In a chat product, every action starts from a prompt the user typed; with a 4P agent, the user often learns about an action from the agent's own report.</p>
     <div class="two-col">
       <div class="card card--focus">
-        <h3 class="card__title"><span class="tag"><span data-k="k233">The risk</span></span><span data-k="k234">The agent chooses to act</span></h3>
+        <h3 class="card__title"><span class="tag"><span data-k="k272">The risk</span></span><span data-k="k273">The agent chooses to act</span></h3>
         <ul class="clean-list">
-<li><span data-k="k235">Forbes reports that one Instinct user watched the agent book a restaurant table that carried a large cancellation fee.</span></li>
-<li><span data-k="k236">Vellum reports an email that Instinct sent on Katie Jacobs Stanton's behalf without checking with her first.</span></li>
-<li><span data-k="k237">I think approval works better per class of action, such as payments, sends, deletes and signatures, than per tool, because a tool without an approval requirement can produce the same outcome as a tool with one.</span></li>
+<li><span data-k="k274">Forbes reports that one Instinct user watched the agent book a restaurant table that carried a large cancellation fee.</span></li>
+<li><span data-k="k275">Vellum reports an email that Instinct sent on Katie Jacobs Stanton's behalf without checking with her first.</span></li>
+<li><span data-k="k276">I think approval works better per class of action, such as payments, sends, deletes and signatures, than per tool, because a tool without an approval requirement can produce the same outcome as a tool with one.</span></li>
         </ul>
       </div>
       <div class="draw-wrap">
 <div class="fig fig-three">
-  <div class="fig-title" data-k="k220">Three places makers put the check</div>
+  <div class="fig-title" data-k="k259">Three places makers put the check</div>
   <div class="three">
     <div class="tcol">
-      <div class="tcol__h" data-k="k221">Restrict the mode</div>
-      <div class="tcol__who" data-k="k222">OpenAI</div>
-      <p data-k="k223">While the user is away, a dot's proactive research uses read-only tools: it cannot send messages, change app content or control a browser.</p>
+      <div class="tcol__h" data-k="k260">Restrict the mode</div>
+      <div class="tcol__who" data-k="k261">OpenAI</div>
+      <p data-k="k262">While the user is away, a dot's proactive research uses read-only tools: it cannot send messages, change app content or control a browser.</p>
     </div>
     <div class="tcol">
-      <div class="tcol__h" data-k="k224">Add a second agent</div>
-      <div class="tcol__who" data-k="k225">Meta</div>
-      <p data-k="k226">A separate Sentinel agent on the same Muse Secure VM, isolated at the system level, must approve anything Muse sends to the internet.</p>
+      <div class="tcol__h" data-k="k263">Add a second agent</div>
+      <div class="tcol__who" data-k="k264">Meta</div>
+      <p data-k="k265">A separate Sentinel agent on the same Muse Secure VM, isolated at the system level, must approve anything Muse sends to the internet.</p>
     </div>
     <div class="tcol">
-      <div class="tcol__h" data-k="k227">Approve named action classes</div>
-      <div class="tcol__who" data-k="k228">Anthropic, Google, Microsoft</div>
-      <p data-k="k229">Duet waits before sending, paying, signing or deleting; Spark asks before spending money or sending email; Autopilot can require sign-off for sensitive actions.</p>
+      <div class="tcol__h" data-k="k266">Approve named action classes</div>
+      <div class="tcol__who" data-k="k267">Anthropic, Google, Microsoft</div>
+      <p data-k="k268">Duet waits before sending, paying, signing or deleting; Spark asks before spending money or sending email; Autopilot can require sign-off for sensitive actions.</p>
     </div>
   </div>
 </div></div>
@@ -764,32 +776,32 @@ body.is-zh .kicker, body.is-zh .eyebrow, body.is-zh .hero__script, body.is-zh .b
 </section>
 <section class="slide" id="s12" data-title-en="Risk 4: Delegated Authority" data-title-zh="风险四：委托权限">
   <div class="slide__in">
-    <span class="kicker" data-k="k246">Risk 4</span>
-    <h2 class="h2" data-k="k247">Delegated Authority</h2>
-    <p class="lead" data-k="k248">Every action runs under some identity, and that identity determines who can audit the action and who is accountable for a mistake.</p>
+    <span class="kicker" data-k="k285">Risk 4</span>
+    <h2 class="h2" data-k="k286">Delegated Authority</h2>
+    <p class="lead" data-k="k287">Every action runs under some identity, and that identity determines who can audit the action and who is accountable for a mistake.</p>
     <div class="two-col">
       <div class="card card--focus">
-        <h3 class="card__title"><span class="tag"><span data-k="k249">The risk</span></span><span data-k="k250">Whose name is on the action</span></h3>
+        <h3 class="card__title"><span class="tag"><span data-k="k288">The risk</span></span><span data-k="k289">Whose name is on the action</span></h3>
         <ul class="clean-list">
-<li><span data-k="k251">Makers split into two identity models, shown on the right.</span></li>
-<li><span data-k="k252">Here the personal and professional properties conflict: when one agent holds a family calendar and a company CRM, personal data can appear in a work message, or work data in a personal one.</span></li>
-<li><span data-k="k253">The company's data loss controls see that message only when the agent runs inside the company's tenant; of the seven agents, Microsoft places only Autopilot inside the customer's own Microsoft 365 tenant.</span></li>
+<li><span data-k="k290">Makers split into two identity models, shown on the right.</span></li>
+<li><span data-k="k291">Here the personal and professional properties conflict: when one agent holds a family calendar and a company CRM, personal data can appear in a work message, or work data in a personal one.</span></li>
+<li><span data-k="k292">The company's data loss controls see that message only when the agent runs inside the company's tenant; of the seven agents, Microsoft places only Autopilot inside the customer's own Microsoft 365 tenant.</span></li>
         </ul>
       </div>
       <div class="draw-wrap">
 <div class="fig fig-id">
   <div class="idcols">
     <div class="idcol idcol--good">
-      <div class="idcol__h" data-k="k238">The agent has its own identity</div>
-      <div class="idcol__r" data-k="k239">Microsoft Autopilot: one governed Entra identity per agent</div>
-      <div class="idcol__r" data-k="k240">OpenAI: specialist dots for organizations in preview, each with its own identity and access</div>
-      <div class="idcol__out" data-k="k241">Auditors can attribute each action to one agent</div>
+      <div class="idcol__h" data-k="k277">The agent has its own identity</div>
+      <div class="idcol__r" data-k="k278">Microsoft Autopilot: one governed Entra identity per agent</div>
+      <div class="idcol__r" data-k="k279">OpenAI: specialist dots for organizations in preview, each with its own identity and access</div>
+      <div class="idcol__out" data-k="k280">Auditors can attribute each action to one agent</div>
     </div>
     <div class="idcol idcol--bad">
-      <div class="idcol__h" data-k="k242">The agent acts as the user under terms of service</div>
-      <div class="idcol__r" data-k="k243">Instinct, per Vellum: appointed as the user's agent with authority to enter binding agreements and transactions</div>
-      <div class="idcol__r" data-k="k244">Forbes, citing TechCrunch in August 2026: the terms granted “perpetual and irrevocable” rights to store user data</div>
-      <div class="idcol__out" data-k="k245">The user carries the consequences</div>
+      <div class="idcol__h" data-k="k281">The agent acts as the user under terms of service</div>
+      <div class="idcol__r" data-k="k282">Instinct, per Vellum: appointed as the user's agent with authority to enter binding agreements and transactions</div>
+      <div class="idcol__r" data-k="k283">Forbes, citing TechCrunch in August 2026: the terms granted “perpetual and irrevocable” rights to store user data</div>
+      <div class="idcol__out" data-k="k284">The user carries the consequences</div>
     </div>
   </div>
 </div></div>
@@ -798,33 +810,33 @@ body.is-zh .kicker, body.is-zh .eyebrow, body.is-zh .hero__script, body.is-zh .b
 </section>
 <section class="slide slide--alt" id="s13" data-title-en="Builder&#x27;s Verdict" data-title-zh="构建者结论">
   <div class="slide__in">
-    <span class="kicker" data-k="k261">Verdict</span>
-    <h2 class="h2" data-k="k262">Builder's Verdict</h2>
-    <p class="lead" data-k="k263">The makers now compete on control design more than on capability.</p>
+    <span class="kicker" data-k="k300">Verdict</span>
+    <h2 class="h2" data-k="k301">Builder's Verdict</h2>
+    <p class="lead" data-k="k302">The makers now compete on control design more than on capability.</p>
     <div class="two-col">
       <div class="card card--focus">
-        <h3 class="card__title"><span class="tag"><span data-k="k264">Verdict</span></span><span data-k="k265">What the launch material shows</span></h3>
+        <h3 class="card__title"><span class="tag"><span data-k="k303">Verdict</span></span><span data-k="k304">What the launch material shows</span></h3>
         <ul class="clean-list">
-<li><span data-k="k266"><strong>What changed:</strong> the largest AI labs and two startups now sell one agent design.</span></li>
-<li><span data-k="k267"><strong>Where the design fails:</strong> every incident on slides 9 to 11 comes from Instinct, the one product with no documented approval rules, per Vellum.</span></li>
-<li><span data-k="k268"><strong>What comes next:</strong> the makers list three directions, shown on the right.</span></li>
+<li><span data-k="k305"><strong>What changed:</strong> the largest AI labs and two startups now sell one agent design.</span></li>
+<li><span data-k="k306"><strong>Where the design fails:</strong> every incident on slides 9 to 11 comes from Instinct, the one product with no documented approval rules, per Vellum.</span></li>
+<li><span data-k="k307"><strong>What comes next:</strong> the makers list three directions, shown on the right.</span></li>
         </ul>
       </div>
       <div class="draw-wrap">
 <div class="fig fig-three">
-  <div class="fig-title" data-k="k254">What the makers list as next</div>
+  <div class="fig-title" data-k="k293">What the makers list as next</div>
   <div class="three">
     <div class="tcol">
-      <div class="tcol__h" data-k="k255">More agents per user</div>
-      <p data-k="k256">OpenAI starts every user with one primary dot and envisions teams of dots working together; Google lists custom sub-agents for Spark.</p>
+      <div class="tcol__h" data-k="k294">More agents per user</div>
+      <p data-k="k295">OpenAI starts every user with one primary dot and envisions teams of dots working together; Google lists custom sub-agents for Spark.</p>
     </div>
     <div class="tcol">
-      <div class="tcol__h" data-k="k257">More access to the user's own devices</div>
-      <p data-k="k258">Google lists texting and emailing Spark and control of the user's local browser as planned additions.</p>
+      <div class="tcol__h" data-k="k296">More access to the user's own devices</div>
+      <p data-k="k297">Google lists texting and emailing Spark and control of the user's local browser as planned additions.</p>
     </div>
     <div class="tcol">
-      <div class="tcol__h" data-k="k259">Stronger isolation from the maker</div>
-      <p data-k="k260">Meta announced a Confidential VM with keys held only by the user, for later in 2026.</p>
+      <div class="tcol__h" data-k="k298">Stronger isolation from the maker</div>
+      <p data-k="k299">Meta announced a Confidential VM with keys held only by the user, for later in 2026.</p>
     </div>
   </div>
 </div></div>
@@ -833,16 +845,16 @@ body.is-zh .kicker, body.is-zh .eyebrow, body.is-zh .hero__script, body.is-zh .b
 </section>
 <section class="slide" id="s14" data-title-en="References" data-title-zh="参考文献">
   <div class="slide__in">
-    <span class="kicker" data-k="k269">Sources</span>
-    <h2 class="h2" data-k="k270">References</h2>
-    <p class="lead" data-k="k271">Every claim in this deck comes from these sources, as of November 25, 2026.</p>
+    <span class="kicker" data-k="k308">Sources</span>
+    <h2 class="h2" data-k="k309">References</h2>
+    <p class="lead" data-k="k310">Every claim in this deck comes from these sources, as of November 25, 2026.</p>
     <div class="two-col">
       <div class="card card--focus">
-        <h3 class="card__title"><span class="tag"><span data-k="k272">Notes</span></span><span data-k="k273">Reading the sources</span></h3>
+        <h3 class="card__title"><span class="tag"><span data-k="k311">Notes</span></span><span data-k="k312">Reading the sources</span></h3>
         <ul class="clean-list">
-<li><span data-k="k274">Each maker's own announcement is the source for its product claims; incident reports come from Forbes and Vellum.</span></li>
-<li><span data-k="k275">Vellum sells a competing agent, so its claims about Instinct appear in this deck as Vellum's reports.</span></li>
-<li><span data-k="k276">Follow my work on <a href="https://kenhuangus.substack.com/" target="_blank" rel="noopener">Substack</a> and <a href="https://www.linkedin.com/in/kenhuang8/" target="_blank" rel="noopener">LinkedIn</a>.</span></li>
+<li><span data-k="k313">Each maker's own announcement is the source for its product claims; incident reports come from Forbes and Vellum.</span></li>
+<li><span data-k="k314">Vellum sells a competing agent, so its claims about Instinct appear in this deck as Vellum's reports.</span></li>
+<li><span data-k="k315">Follow my work on <a href="https://kenhuangus.substack.com/" target="_blank" rel="noopener">Substack</a> and <a href="https://www.linkedin.com/in/kenhuang8/" target="_blank" rel="noopener">LinkedIn</a>.</span></li>
         </ul>
       </div>
       <div class="draw-wrap"><div class="fig fig-refs"><ol class="refs"><li><span class="rauth">Anthropic.</span> <a href="https://claude.com/resources/articles/claude-duet" target="_blank" rel="noopener noreferrer">Introducing Claude Duet</a>, October 21, 2026.</li><li><span class="rauth">TechCrunch.</span> <a href="https://techcrunch.com/2026/10/22/claude-duet-app-is-anthropics-bet-on-agents/" target="_blank" rel="noopener noreferrer">Claude Duet app is Anthropic's bet on agents</a>, October 22, 2026.</li><li><span class="rauth">Meta.</span> <a href="https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/" target="_blank" rel="noopener noreferrer">Introducing Muse: The World's First Personal AI Agent Built for Everyone</a>, September 8, 2026.</li><li><span class="rauth">OpenAI.</span> <a href="https://openai.com/index/introducing-dots/" target="_blank" rel="noopener noreferrer">Introducing dots</a>, September 29, 2026.</li><li><span class="rauth">Iain Martin, Forbes.</span> <a href="https://www.forbes.com/sites/iainmartin/2026/08/26/vcs-are-so-obsessed-with-this-ai-assistant-that-its-valuation-jumped-fivefold-in-weeks/" target="_blank" rel="noopener noreferrer">AI Assistant Instinct Hits $2.5 Billion Valuation In Weeks Amid VC Feeding Frenzy</a>, August 26, 2026.</li><li><span class="rauth">Vellum.</span> <a href="https://www.vellum.ai/blog/official-instinct-breakdown" target="_blank" rel="noopener noreferrer">Official Instinct Breakdown</a>, 2026.</li><li><span class="rauth">Google.</span> <a href="https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/" target="_blank" rel="noopener noreferrer">The Gemini app becomes more agentic, delivering proactive, 24/7 help</a>, May 19, 2026.</li><li><span class="rauth">Microsoft.</span> <a href="https://www.microsoft.com/en-us/copilot/blog/2026/06/02/introducing-microsoft-scout-your-always-on-personal-agent/" target="_blank" rel="noopener noreferrer">Introducing Microsoft Scout: your always-on personal agent</a>, June 2, 2026.</li><li><span class="rauth">Microsoft.</span> <a href="https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/" target="_blank" rel="noopener noreferrer">Introducing the new Copilot with Home, Code and Autopilot</a>, September 25, 2026.</li><li><span class="rauth">AppleInsider.</span> <a href="https://appleinsider.com/articles/26/06/04/first-ai-agent-for-messages-business-chat-approved-by-apple" target="_blank" rel="noopener noreferrer">First AI agent for Messages Business Chat approved by Apple</a>, June 4, 2026.</li><li><span class="rauth">OWASP.</span> <a href="https://aivss.owasp.org/" target="_blank" rel="noopener noreferrer">AI Vulnerability Scoring System (AIVSS)</a>.</li><li><span class="rauth">OWASP.</span> <a href="https://owasp.github.io/www-project-agentic-skills-top-10/top10.html" target="_blank" rel="noopener noreferrer">Agentic Skills Top 10: The Top 10 Risks</a>.</li><li><span class="rauth">Ken Huang, Cloud Security Alliance.</span> <a href="https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro" target="_blank" rel="noopener noreferrer">Agentic AI Threat Modeling Framework: MAESTRO</a>, February 6, 2025.</li></ol></div></div>
@@ -851,14 +863,14 @@ body.is-zh .kicker, body.is-zh .eyebrow, body.is-zh .hero__script, body.is-zh .b
 </section>
 </main>
 <nav class="ctrl" aria-label="Slide controls">
-  <button type="button" class="ctrl__btn" id="prevBtn"><span data-k="k277">‹ Prev</span></button>
+  <button type="button" class="ctrl__btn" id="prevBtn"><span data-k="k316">‹ Prev</span></button>
   <div class="dots" id="dots"></div>
   <span class="ctrl__count" id="count">1 / 14</span>
-  <button type="button" class="ctrl__btn ctrl__btn--accent" id="nextBtn"><span data-k="k278">Next ›</span></button>
+  <button type="button" class="ctrl__btn ctrl__btn--accent" id="nextBtn"><span data-k="k317">Next ›</span></button>
 </nav>
 <div class="progress" id="progress"></div>
 <script>
-window.ZH = {"k1": "主动 · 持续 · 个人 · 专业", "k2": "4P 智能体", "k3": "主动发起对话、持续运行、同时掌握个人与公司数据的智能体", "k4": "为什么它们需要专门的威胁模型", "k5": "黄连金 (Ken Huang), CISSP · DistributedApps.ai 首席执行官", "k6": "开始演示 ➔", "k7": "📚 AI 图书作者与演讲者（Harness Engineering、MAESTRO）", "k8": "🎓 旧金山大学兼职教授：", "k9": "🛡️ OWASP AIVSS 项目负责人", "k10": "🤝 CSA 研究员，两个 CSA AI 安全工作组联合主席", "k11": "🔟 OWASP 大语言模型应用十大风险核心成员", "k12": "🏛️ AIUC-1 联盟成员", "k13": "🔬 Schmidt Sciences 资助评审成员", "k14": "🧑‍🏫 EC-Council 讲师：生成式 AI 网络安全", "k15": "🚀 DistributedApps.ai 首席执行官：", "k16": "关于黄连金 (Ken Huang)", "k17": "我的著作由学术与国际出版社出版", "k18": "同行评审图书、专著与手册", "k19": "安全控制的前提", "k20": "2026 年发布文章描述的设计", "k21": "等待提示词", "k22": "主动发起对话", "k23": "完成单个任务", "k24": "用户离开后继续工作", "k25": "忘记做过什么", "k26": "保留记忆", "k27": "威胁模型现在必须回答的问题", "k28": "具有常驻访问权限的智能体在无人监控时会做什么，而不再只是模型在被提问时会说什么？", "k29": "趋势", "k30": "七次发布，同一种设计", "k31": "安全控制仍以等待提示词的智能体为前提。", "k32": "为何需要新术语", "k33": "我观察到的情况", "k34": "2026 年 5 月至 10 月，七家公司为同一种智能体设计发布了上线材料。", "k35": "与我合作的安全团队仍在为“等待提示词、完成单个任务、随后忘记所做之事”的智能体设计控制措施。", "k36": "我认为这种设计是聊天助手问世以来应用 AI 领域最重要的变化，它需要专门的威胁模型。", "k37": "主动", "k38": "此前单独存在于", "k39": "主动发起对话的通知系统", "k40": "组合之后", "k41": "无需新的提示词即可行动", "k42": "持续", "k43": "此前单独存在于", "k44": "保留记忆的聊天产品", "k45": "组合之后", "k46": "让这种能力全天 24 小时运行", "k47": "个人", "k48": "此前单独存在于", "k49": "了解家庭情况的消费级助手", "k50": "组合之后", "k51": "让智能体知道用户可能想要什么", "k52": "专业", "k53": "此前单独存在于", "k54": "读取公司文档的办公 Copilot", "k55": "组合之后", "k56": "赋予它对同事和客户所依赖系统的操作权限", "k57": "4P 智能体", "k58": "拥有云端专属计算机的单一智能体", "k59": "定义", "k60": "四个 P", "k61": "基于我的研究，我提出“4P 智能体”一词，指同时具备四项属性的智能体。", "k62": "新在哪里", "k63": "一个智能体，四项属性", "k64": "工程师多年来一直在单独交付其中每一项属性。", "k65": "2026 年，产品团队把四项属性放进同一个智能体，并为它配备了云端专属计算机。", "k66": "每项属性都会放大其他属性的作用；我认为定义这一类别的是这种放大效应，而不是任何单一功能。", "k67": "4P 智能体的一个工作日", "k68": "用户设备", "k69": "笔记本已合上，手机已锁屏", "k70": "云端虚拟机上的智能体", "k71": "发送简报", "k72": "发出提醒", "k73": "起草回复", "k74": "定时任务", "k75": "聊天记忆", "k76": "4P 智能体中的同一个进程", "k77": "保存内容：", "k78": "偏好", "k79": "未完成的承诺", "k80": "重要人物的名字", "k81": "主动 · 持续", "k82": "率先发起，持续运行", "k83": "每项属性都有一个买家可以直接使用的检验方法。", "k84": "检验", "k85": "通过或不通过", "k86": "<strong>主动：</strong>工作日的第一条消息由谁发出？如果是智能体发出，产品即通过。", "k87": "<strong>持续运行：</strong>用户合上笔记本或锁屏后，智能体是否仍在运行？", "k88": "<strong>持续记忆：</strong>智能体是否会在之后几周使用它保存的信息？", "k89": "用户连接的个人数据源", "k90": "私人邮件", "k91": "日历", "k92": "消息", "k93": "智能体了解家人姓名、日常事务和习惯", "k94": "4P 智能体", "k95": "员工使用的公司系统", "k96": "邮件租户", "k97": "聊天工作区", "k98": "账簿", "k99": "CRM", "k100": "文档库", "k101": "公司控制措施", "k102": "身份", "k103": "数据防泄漏", "k104": "审计", "k105": "智能体在这些控制之内运行，或在其之外", "k106": "个人 · 专业", "k107": "了解一个人，服务一家公司", "k108": "同一个智能体同时掌握家庭数据和公司系统。", "k109": "检验", "k110": "通过或不通过", "k111": "<strong>个人：</strong>两个人给出相同指令却得到不同结果，因为智能体对两人的了解不同。", "k112": "<strong>专业：</strong>智能体通过员工使用的系统完成一项工作流程，例如准备会议或催收未付发票。", "k113": "取决于厂商如何构建产品，这种访问会让智能体处于公司控制措施之内或之外。", "k114": "完整", "k115": "完整", "k116": "部分", "k117": "完整", "k118": "2026 年 10 月 21 日", "k119": "完整", "k120": "完整", "k121": "完整", "k122": "部分", "k123": "2026 年 9 月 8 日", "k124": "完整", "k125": "完整", "k126": "完整", "k127": "完整", "k128": "2026 年 9 月 29 日", "k129": "完整", "k130": "完整", "k131": "完整", "k132": "有限", "k133": "2026 年 8 月 26 日（Forbes）", "k134": "完整", "k135": "完整", "k136": "完整", "k137": "部分", "k138": "2026 年 5 月 19 日", "k139": "完整", "k140": "完整", "k141": "有限", "k142": "完整", "k143": "2026 年 6 月 2 日", "k144": "完整", "k145": "部分", "k146": "完整", "k147": "部分", "k148": "2026 年 6 月 4 日（AppleInsider）", "k149": "智能体", "k150": "主动", "k151": "持续", "k152": "个人", "k153": "专业", "k154": "资料日期", "k155": "依据各厂商或所引报道的公开描述评分，截至 2026 年 11 月 25 日。", "k156": "对比", "k157": "七款 4P 智能体对比", "k158": "Google、Microsoft、Meta、OpenAI 和 Anthropic，以及开发 Instinct 和 Poke 的初创公司。", "k159": "评分", "k160": "如何解读", "k161": "<strong>完整</strong>表示资料描述了该属性且未说明限制；<strong>部分</strong>表示说明了限制或范围较窄；<strong>有限</strong>表示所审阅的材料未描述该属性。", "k162": "OpenAI Dots 是唯一四项属性均为“完整”的智能体。", "k163": "七款产品在“主动”上均为“完整”；厂商之间差异最大的是审批设计，以及智能体运行在消费者账户中还是公司租户内。", "k164": "常驻访问权限", "k165": "AST03 权限过大的技能，从按任务出现变为长期存在", "k166": "部署与基础设施", "k167": "记忆投毒", "k168": "AST05 不可信的外部指令", "k169": "数据运营；智能体框架", "k170": "智能体自发的操作", "k171": "智能体生态：工具滥用、目标操纵", "k172": "四类风险中智能体放大效应最大", "k173": "委托权限", "k174": "AST09 缺乏治理", "k175": "智能体生态：抵赖、智能体冒充", "k176": "风险", "k177": "MAESTRO 层", "k178": "风险地图", "k179": "四类风险，三个框架", "k180": "4P 设计带来了等待提示词的聊天助手所没有的四类风险；Instinct 的早期用户在上线几周内就报告了与其中三类相符的事件。", "k181": "我参与的框架", "k182": "我如何为风险归类", "k183": "<strong>OWASP AIVSS</strong> 是我负责的项目，用于为智能体 AI 漏洞评分，并提供在线评分计算器。", "k184": "<strong>OWASP 智能体技能十大风险（AST10）</strong>列出了指导智能体行动的技能中的十类风险。", "k185": "<strong>MAESTRO</strong> 是我于 2025 年 2 月通过云安全联盟（CSA）推出的七层智能体威胁模型。", "k186": "从不接触密码或登录令牌", "k187": "使用已保存的凭据但看不到其内容", "k188": "使用已保存的密码但不向模型暴露", "k189": "凭据限定于具体任务，并从日志中删除", "k190": "据 Vellum 报道，凭据缓存在智能体自己的机器上", "k191": "除用户选择连接哪些应用外，未描述其他控制", "k192": "所审阅的材料中未描述", "k193": "凭据分离：模型使用登录凭据，但从不读取其内容", "k194": "我认为这是目前为安全团队提供最多保护的设计。各厂商的公开描述：", "k195": "风险一", "k196": "常驻访问权限", "k197": "按自己的时间表检查收件箱的智能体，无法等待用户登录。", "k198": "风险", "k199": "所有账户，始终连接", "k200": "用户让邮件、聊天、文件，往往还有支付方式，始终保持连接。", "k201": "攻击者攻破聊天助手只能拿到一段对话；攻破 4P 智能体或其所在机器，就能在无人监看的时段同时拿到所有已连接的账户。", "k202": "断开应用只能阻止今后的读取：据 Forbes 报道，Claire Vo 断开 Gmail 后 Instinct 仍保留了她的邮件；Vellum 报道该团队随后增加了删除工具。", "k203": "含攻击者文本的陌生人邮件", "k204": "智能体写下摘要、偏好或待跟进事项", "k205": "长期记忆", "k206": "几周后的某个决定", "k207": "我建议的修复：为每条存储的记忆记录来源", "k208": "来源：用户陈述", "k209": "作为用户本人的偏好来信任", "k210": "来源：外部发件人", "k211": "与用户陈述的内容分开保存", "k212": "风险二", "k213": "记忆投毒", "k214": "持久记忆会把一次性的提示词注入变成智能体持续遵循的指令。", "k215": "风险", "k216": "陌生人的文本变成记忆", "k217": "4P 智能体每天读取陌生人的邮件和消息，并据此把笔记写入长期记忆。", "k218": "据 Vellum 报道，Alex Cohen 向自己的收件箱发送了一组恶意指令，Instinct 照做了，Cohen 随后删除了账户。", "k219": "清除被投毒的记忆条目比从一次注入中恢复更难，因为很难看出哪条记忆来自哪个发件人。", "k220": "厂商设置检查的三个位置", "k221": "限制运行模式", "k222": "OpenAI", "k223": "用户不在时，dot 的主动研究只使用只读工具：不能发送消息、修改应用内容或控制浏览器。", "k224": "增加第二个智能体", "k225": "Meta", "k226": "同一台 Muse 安全虚拟机上有一个在系统层面隔离的独立 Sentinel 智能体，Muse 发往互联网的任何内容都须经它批准。", "k227": "审批指定类别的操作", "k228": "Anthropic、Google、Microsoft", "k229": "Duet 在发送、付款、签署或删除前等待确认；Spark 在花钱或发邮件前先询问；Autopilot 可对敏感操作要求人工签核。", "k230": "风险三", "k231": "智能体自发的操作", "k232": "在聊天产品中，每个操作都源自用户输入的提示词；而使用 4P 智能体时，用户往往是从智能体自己的报告中得知某个操作。", "k233": "风险", "k234": "由智能体决定行动", "k235": "据 Forbes 报道，一位 Instinct 用户看着智能体预订了一张取消费用很高的餐厅餐位。", "k236": "据 Vellum 报道，Instinct 未经确认就以 Katie Jacobs Stanton 的名义发送了一封邮件。", "k237": "我认为审批按操作类别（如付款、发送、删除、签署）设置比按工具设置更有效，因为不需要审批的工具可能产生与需要审批的工具相同的结果。", "k238": "智能体拥有自己的身份", "k239": "Microsoft Autopilot：每个智能体一个受治理的 Entra 身份", "k240": "OpenAI：面向组织的专业 dots 正在预览，每个都有自己的身份和访问权限", "k241": "审计人员可以把每个操作归属到一个智能体", "k242": "智能体依据服务条款以用户身份行事", "k243": "据 Vellum：Instinct 被指定为用户的代理人，有权订立具有约束力的协议和交易", "k244": "Forbes 于 2026 年 8 月援引 TechCrunch：条款授予其“永久且不可撤销”的用户数据存储权", "k245": "后果由用户承担", "k246": "风险四", "k247": "委托权限", "k248": "每个操作都在某个身份下运行，这个身份决定了谁能审计该操作、谁为错误负责。", "k249": "风险", "k250": "操作记在谁的名下", "k251": "厂商分为两种身份模式，见右图。", "k252": "个人属性与专业属性在这里发生冲突：当同一个智能体同时掌握家庭日历和公司 CRM 时，个人数据可能出现在工作消息中，工作数据也可能出现在个人消息中。", "k253": "只有当智能体在公司租户内运行时，公司的数据防泄漏控制才能看到这类消息；七款产品中，只有 Microsoft 把 Autopilot 放在客户自己的 Microsoft 365 租户内。", "k254": "厂商列出的下一步", "k255": "每位用户更多智能体", "k256": "OpenAI 为每位用户先提供一个主 dot，并设想多个 dots 组成团队协同工作；Google 为 Spark 列出了自定义子智能体。", "k257": "更多访问用户自有设备", "k258": "Google 计划增加通过短信和邮件联系 Spark，以及控制用户本地浏览器。", "k259": "与厂商更强的隔离", "k260": "Meta 宣布将于 2026 年晚些时候推出机密虚拟机，密钥仅由用户持有。", "k261": "结论", "k262": "构建者结论", "k263": "厂商之间的竞争重点已从能力转向控制设计。", "k264": "结论", "k265": "发布材料表明了什么", "k266": "<strong>变化：</strong>最大的几家 AI 实验室和两家初创公司如今销售同一种智能体设计。", "k267": "<strong>设计在哪里失败：</strong>第 9 至 11 页的所有事件都来自 Instinct；据 Vellum 报道，它是唯一没有公开审批规则的产品。", "k268": "<strong>下一步：</strong>厂商列出了三个方向，见右图。", "k269": "资料来源", "k270": "参考文献", "k271": "本演示中的所有内容均来自以下资料，截至 2026 年 11 月 25 日。", "k272": "说明", "k273": "如何看待这些资料", "k274": "各厂商的产品描述以其官方发布为准；事件报告来自 Forbes 和 Vellum。", "k275": "Vellum 销售一款竞品智能体，因此本演示把它对 Instinct 的描述作为 Vellum 的报道呈现。", "k276": "欢迎关注我的 <a href=\"https://kenhuangus.substack.com/\" target=\"_blank\" rel=\"noopener\">Substack</a> 和 <a href=\"https://www.linkedin.com/in/kenhuang8/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>。", "k277": "‹ 上一页", "k278": "下一页 ›", "k279": "全屏演示", "k280": "GitHub 仓库 ↗", "k281": "DistributedApps ↗"};
+window.ZH = {"k1": "主动 · 持续 · 个人 · 专业", "k2": "4P 智能体", "k3": "主动发起对话、持续运行、同时掌握个人与公司数据的智能体", "k4": "为什么它们需要专门的威胁模型", "k5": "黄连金 (Ken Huang), CISSP · DistributedApps.ai 首席执行官", "k6": "开始演示 ➔", "k7": "📚 AI 图书作者与演讲者（Harness Engineering、MAESTRO）", "k8": "🎓 旧金山大学兼职教授：", "k9": "🛡️ OWASP AIVSS 项目负责人", "k10": "🤝 CSA 研究员，两个 CSA AI 安全工作组联合主席", "k11": "🔟 OWASP 大语言模型应用十大风险核心成员", "k12": "🏛️ AIUC-1 联盟成员", "k13": "🔬 Schmidt Sciences 资助评审成员", "k14": "🧑‍🏫 EC-Council 讲师：生成式 AI 网络安全", "k15": "🚀 DistributedApps.ai 首席执行官：", "k16": "关于黄连金 (Ken Huang)", "k17": "我的著作由学术与国际出版社出版", "k18": "同行评审图书、专著与手册", "k19": "安全控制的前提", "k20": "2026 年发布文章描述的设计", "k21": "等待提示词", "k22": "主动发起对话", "k23": "完成单个任务", "k24": "用户离开后继续工作", "k25": "忘记做过什么", "k26": "保留记忆", "k27": "威胁模型现在必须回答的问题", "k28": "具有常驻访问权限的智能体在无人监控时会做什么，而不再只是模型在被提问时会说什么？", "k29": "趋势", "k30": "七次发布，同一种设计", "k31": "安全控制仍以等待提示词的智能体为前提。", "k32": "为何需要新术语", "k33": "我观察到的情况", "k34": "2026 年 5 月至 10 月，七家公司为同一种智能体设计发布了上线材料。", "k35": "与我合作的安全团队仍在为“等待提示词、完成单个任务、随后忘记所做之事”的智能体设计控制措施。", "k36": "我认为这种设计是聊天助手问世以来应用 AI 领域最重要的变化，它需要专门的威胁模型。", "k37": "主动", "k38": "此前单独存在于", "k39": "主动发起对话的通知系统", "k40": "组合之后", "k41": "无需新的提示词即可行动", "k42": "持续", "k43": "此前单独存在于", "k44": "保留记忆的聊天产品", "k45": "组合之后", "k46": "让这种能力全天 24 小时运行", "k47": "个人", "k48": "此前单独存在于", "k49": "了解家庭情况的消费级助手", "k50": "组合之后", "k51": "让智能体知道用户可能想要什么", "k52": "专业", "k53": "此前单独存在于", "k54": "读取公司文档的办公 Copilot", "k55": "组合之后", "k56": "赋予它对同事和客户所依赖系统的操作权限", "k57": "4P 智能体", "k58": "拥有云端专属计算机的单一智能体", "k59": "定义", "k60": "四个 P", "k61": "基于我的研究，我提出“4P 智能体”一词，指同时具备四项属性的智能体。", "k62": "新在哪里", "k63": "一个智能体，四项属性", "k64": "工程师多年来一直在单独交付其中每一项属性。", "k65": "2026 年，产品团队把四项属性放进同一个智能体，并为它配备了云端专属计算机。", "k66": "每项属性都会放大其他属性的作用；我认为定义这一类别的是这种放大效应，而不是任何单一功能。", "k67": "4P 智能体的一个工作日", "k68": "用户设备", "k69": "笔记本已合上，手机已锁屏", "k70": "云端虚拟机上的智能体", "k71": "发送简报", "k72": "发出提醒", "k73": "起草回复", "k74": "定时任务", "k75": "聊天记忆", "k76": "4P 智能体中的同一个进程", "k77": "保存内容：", "k78": "偏好", "k79": "未完成的承诺", "k80": "重要人物的名字", "k81": "主动 · 持续", "k82": "率先发起，持续运行", "k83": "每项属性都有一个买家可以直接使用的检验方法。", "k84": "检验", "k85": "通过或不通过", "k86": "<strong>主动：</strong>工作日的第一条消息由谁发出？如果是智能体发出，产品即通过。", "k87": "<strong>持续运行：</strong>用户合上笔记本或锁屏后，智能体是否仍在运行？", "k88": "<strong>持续记忆：</strong>智能体是否会在之后几周使用它保存的信息？", "k89": "用户连接的个人数据源", "k90": "私人邮件", "k91": "日历", "k92": "消息", "k93": "智能体了解家人姓名、日常事务和习惯", "k94": "4P 智能体", "k95": "员工使用的公司系统", "k96": "邮件租户", "k97": "聊天工作区", "k98": "账簿", "k99": "CRM", "k100": "文档库", "k101": "公司控制措施", "k102": "身份", "k103": "数据防泄漏", "k104": "审计", "k105": "智能体在这些控制之内运行，或在其之外", "k106": "个人 · 专业", "k107": "了解一个人，服务一家公司", "k108": "同一个智能体同时掌握家庭数据和公司系统。", "k109": "检验", "k110": "通过或不通过", "k111": "<strong>个人：</strong>两个人给出相同指令却得到不同结果，因为智能体对两人的了解不同。", "k112": "<strong>专业：</strong>智能体通过员工使用的系统完成一项工作流程，例如准备会议或催收未付发票。", "k113": "取决于厂商如何构建产品，这种访问会让智能体处于公司控制措施之内或之外。", "k114": "主动", "k115": "完整", "k116": "持续", "k117": "完整", "k118": "个人", "k119": "部分", "k120": "专业", "k121": "完整", "k122": "资料日期", "k123": "2026 年 10 月 21 日", "k124": "主动", "k125": "完整", "k126": "持续", "k127": "完整", "k128": "个人", "k129": "完整", "k130": "专业", "k131": "部分", "k132": "资料日期", "k133": "2026 年 9 月 8 日", "k134": "主动", "k135": "完整", "k136": "持续", "k137": "完整", "k138": "个人", "k139": "完整", "k140": "专业", "k141": "完整", "k142": "资料日期", "k143": "2026 年 9 月 29 日", "k144": "主动", "k145": "完整", "k146": "持续", "k147": "完整", "k148": "个人", "k149": "完整", "k150": "专业", "k151": "有限", "k152": "资料日期", "k153": "2026 年 8 月 26 日（Forbes）", "k154": "主动", "k155": "完整", "k156": "持续", "k157": "完整", "k158": "个人", "k159": "完整", "k160": "专业", "k161": "部分", "k162": "资料日期", "k163": "2026 年 5 月 19 日", "k164": "主动", "k165": "完整", "k166": "持续", "k167": "完整", "k168": "个人", "k169": "有限", "k170": "专业", "k171": "完整", "k172": "资料日期", "k173": "2026 年 6 月 2 日", "k174": "主动", "k175": "完整", "k176": "持续", "k177": "部分", "k178": "个人", "k179": "完整", "k180": "专业", "k181": "部分", "k182": "资料日期", "k183": "2026 年 6 月 4 日（AppleInsider）", "k184": "智能体", "k185": "主动", "k186": "持续", "k187": "个人", "k188": "专业", "k189": "资料日期", "k190": "依据各厂商或所引报道的公开描述评分，截至 2026 年 11 月 25 日。", "k191": "对比", "k192": "七款 4P 智能体对比", "k193": "Google、Microsoft、Meta、OpenAI 和 Anthropic，以及开发 Instinct 和 Poke 的初创公司。", "k194": "评分", "k195": "如何解读", "k196": "<strong>完整</strong>表示资料描述了该属性且未说明限制；<strong>部分</strong>表示说明了限制或范围较窄；<strong>有限</strong>表示所审阅的材料未描述该属性。", "k197": "OpenAI Dots 是唯一四项属性均为“完整”的智能体。", "k198": "七款产品在“主动”上均为“完整”；厂商之间差异最大的是审批设计，以及智能体运行在消费者账户中还是公司租户内。", "k199": "常驻访问权限", "k200": "AST03 权限过大的技能，从按任务出现变为长期存在", "k201": "部署与基础设施", "k202": "记忆投毒", "k203": "AST05 不可信的外部指令", "k204": "数据运营；智能体框架", "k205": "智能体自发的操作", "k206": "智能体生态：工具滥用、目标操纵", "k207": "四类风险中智能体放大效应最大", "k208": "委托权限", "k209": "AST09 缺乏治理", "k210": "智能体生态：抵赖、智能体冒充", "k211": "MAESTRO 层", "k212": "MAESTRO 层", "k213": "MAESTRO 层", "k214": "MAESTRO 层", "k215": "风险", "k216": "MAESTRO 层", "k217": "风险地图", "k218": "四类风险，三个框架", "k219": "4P 设计带来了等待提示词的聊天助手所没有的四类风险；Instinct 的早期用户在上线几周内就报告了与其中三类相符的事件。", "k220": "我参与的框架", "k221": "我如何为风险归类", "k222": "<strong>OWASP AIVSS</strong> 是我负责的项目，用于为智能体 AI 漏洞评分，并提供在线评分计算器。", "k223": "<strong>OWASP 智能体技能十大风险（AST10）</strong>列出了指导智能体行动的技能中的十类风险。", "k224": "<strong>MAESTRO</strong> 是我于 2025 年 2 月通过云安全联盟（CSA）推出的七层智能体威胁模型。", "k225": "从不接触密码或登录令牌", "k226": "使用已保存的凭据但看不到其内容", "k227": "使用已保存的密码但不向模型暴露", "k228": "凭据限定于具体任务，并从日志中删除", "k229": "据 Vellum 报道，凭据缓存在智能体自己的机器上", "k230": "除用户选择连接哪些应用外，未描述其他控制", "k231": "所审阅的材料中未描述", "k232": "凭据分离：模型使用登录凭据，但从不读取其内容", "k233": "我认为这是目前为安全团队提供最多保护的设计。各厂商的公开描述：", "k234": "风险一", "k235": "常驻访问权限", "k236": "按自己的时间表检查收件箱的智能体，无法等待用户登录。", "k237": "风险", "k238": "所有账户，始终连接", "k239": "用户让邮件、聊天、文件，往往还有支付方式，始终保持连接。", "k240": "攻击者攻破聊天助手只能拿到一段对话；攻破 4P 智能体或其所在机器，就能在无人监看的时段同时拿到所有已连接的账户。", "k241": "断开应用只能阻止今后的读取：据 Forbes 报道，Claire Vo 断开 Gmail 后 Instinct 仍保留了她的邮件；Vellum 报道该团队随后增加了删除工具。", "k242": "含攻击者文本的陌生人邮件", "k243": "智能体写下摘要、偏好或待跟进事项", "k244": "长期记忆", "k245": "几周后的某个决定", "k246": "我建议的修复：为每条存储的记忆记录来源", "k247": "来源：用户陈述", "k248": "作为用户本人的偏好来信任", "k249": "来源：外部发件人", "k250": "与用户陈述的内容分开保存", "k251": "风险二", "k252": "记忆投毒", "k253": "持久记忆会把一次性的提示词注入变成智能体持续遵循的指令。", "k254": "风险", "k255": "陌生人的文本变成记忆", "k256": "4P 智能体每天读取陌生人的邮件和消息，并据此把笔记写入长期记忆。", "k257": "据 Vellum 报道，Alex Cohen 向自己的收件箱发送了一组恶意指令，Instinct 照做了，Cohen 随后删除了账户。", "k258": "清除被投毒的记忆条目比从一次注入中恢复更难，因为很难看出哪条记忆来自哪个发件人。", "k259": "厂商设置检查的三个位置", "k260": "限制运行模式", "k261": "OpenAI", "k262": "用户不在时，dot 的主动研究只使用只读工具：不能发送消息、修改应用内容或控制浏览器。", "k263": "增加第二个智能体", "k264": "Meta", "k265": "同一台 Muse 安全虚拟机上有一个在系统层面隔离的独立 Sentinel 智能体，Muse 发往互联网的任何内容都须经它批准。", "k266": "审批指定类别的操作", "k267": "Anthropic、Google、Microsoft", "k268": "Duet 在发送、付款、签署或删除前等待确认；Spark 在花钱或发邮件前先询问；Autopilot 可对敏感操作要求人工签核。", "k269": "风险三", "k270": "智能体自发的操作", "k271": "在聊天产品中，每个操作都源自用户输入的提示词；而使用 4P 智能体时，用户往往是从智能体自己的报告中得知某个操作。", "k272": "风险", "k273": "由智能体决定行动", "k274": "据 Forbes 报道，一位 Instinct 用户看着智能体预订了一张取消费用很高的餐厅餐位。", "k275": "据 Vellum 报道，Instinct 未经确认就以 Katie Jacobs Stanton 的名义发送了一封邮件。", "k276": "我认为审批按操作类别（如付款、发送、删除、签署）设置比按工具设置更有效，因为不需要审批的工具可能产生与需要审批的工具相同的结果。", "k277": "智能体拥有自己的身份", "k278": "Microsoft Autopilot：每个智能体一个受治理的 Entra 身份", "k279": "OpenAI：面向组织的专业 dots 正在预览，每个都有自己的身份和访问权限", "k280": "审计人员可以把每个操作归属到一个智能体", "k281": "智能体依据服务条款以用户身份行事", "k282": "据 Vellum：Instinct 被指定为用户的代理人，有权订立具有约束力的协议和交易", "k283": "Forbes 于 2026 年 8 月援引 TechCrunch：条款授予其“永久且不可撤销”的用户数据存储权", "k284": "后果由用户承担", "k285": "风险四", "k286": "委托权限", "k287": "每个操作都在某个身份下运行，这个身份决定了谁能审计该操作、谁为错误负责。", "k288": "风险", "k289": "操作记在谁的名下", "k290": "厂商分为两种身份模式，见右图。", "k291": "个人属性与专业属性在这里发生冲突：当同一个智能体同时掌握家庭日历和公司 CRM 时，个人数据可能出现在工作消息中，工作数据也可能出现在个人消息中。", "k292": "只有当智能体在公司租户内运行时，公司的数据防泄漏控制才能看到这类消息；七款产品中，只有 Microsoft 把 Autopilot 放在客户自己的 Microsoft 365 租户内。", "k293": "厂商列出的下一步", "k294": "每位用户更多智能体", "k295": "OpenAI 为每位用户先提供一个主 dot，并设想多个 dots 组成团队协同工作；Google 为 Spark 列出了自定义子智能体。", "k296": "更多访问用户自有设备", "k297": "Google 计划增加通过短信和邮件联系 Spark，以及控制用户本地浏览器。", "k298": "与厂商更强的隔离", "k299": "Meta 宣布将于 2026 年晚些时候推出机密虚拟机，密钥仅由用户持有。", "k300": "结论", "k301": "构建者结论", "k302": "厂商之间的竞争重点已从能力转向控制设计。", "k303": "结论", "k304": "发布材料表明了什么", "k305": "<strong>变化：</strong>最大的几家 AI 实验室和两家初创公司如今销售同一种智能体设计。", "k306": "<strong>设计在哪里失败：</strong>第 9 至 11 页的所有事件都来自 Instinct；据 Vellum 报道，它是唯一没有公开审批规则的产品。", "k307": "<strong>下一步：</strong>厂商列出了三个方向，见右图。", "k308": "资料来源", "k309": "参考文献", "k310": "本演示中的所有内容均来自以下资料，截至 2026 年 11 月 25 日。", "k311": "说明", "k312": "如何看待这些资料", "k313": "各厂商的产品描述以其官方发布为准；事件报告来自 Forbes 和 Vellum。", "k314": "Vellum 销售一款竞品智能体，因此本演示把它对 Instinct 的描述作为 Vellum 的报道呈现。", "k315": "欢迎关注我的 <a href=\"https://kenhuangus.substack.com/\" target=\"_blank\" rel=\"noopener\">Substack</a> 和 <a href=\"https://www.linkedin.com/in/kenhuang8/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>。", "k316": "‹ 上一页", "k317": "下一页 ›", "k318": "全屏演示", "k319": "GitHub 仓库 ↗", "k320": "DistributedApps ↗"};
 (function () {
   var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
   var total = slides.length;
